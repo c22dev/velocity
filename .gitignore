@@ -1,0 +1,10 @@
+# Console keys and game dumps: never commit
+*.keys
+*.nsp
+*.nca
+*.xci
+/dlcs/
+/Firmware/
+/work/
+/target/
+.DS_Store
