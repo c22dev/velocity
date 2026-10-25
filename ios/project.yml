@@ -1,0 +1,38 @@
+# Velocity - project.yml
+# Constantin Clerc (c22dev) - 0.1
+
+name: Velocity
+options:
+  deploymentTarget:
+    iOS: "26.0"
+targets:
+  Velocity:
+    type: application
+    platform: iOS
+    sources:
+      - path: stub.c
+      - path: ../target/ios-res/modules
+        type: folder
+        buildPhase: resources
+      - path: ../target/ios-res/shaders
+        type: folder
+        buildPhase: resources
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: ch.cclerc.velocity
+        PRODUCT_NAME: Velocity
+        EXECUTABLE_NAME: velocity
+        CODE_SIGN_STYLE: Automatic
+        CODE_SIGN_ENTITLEMENTS: Velocity.entitlements
+        INFOPLIST_FILE: Info.plist
+        TARGETED_DEVICE_FAMILY: "1,2"
+        ENABLE_USER_SCRIPT_SANDBOXING: NO
+        DEAD_CODE_STRIPPING: NO
+        STRIP_INSTALLED_PRODUCT: NO
+        DEBUG_INFORMATION_FORMAT: dwarf
+    postBuildScripts:
+      - name: Use the Rust executable
+        basedOnDependencyAnalysis: false
+        script: |
+          set -e
+          cp "$SRCROOT/../target/ios/aarch64-apple-ios/release/velocity" "$TARGET_BUILD_DIR/$EXECUTABLE_PATH"

@@ -406,12 +406,12 @@ dependencies = [
 [[package]]
 name = "nxabi"
 version = "0.1.0"
-source = "git+https://github.com/c22dev/nxhost#d9b2dc5b88447f499f7b5761d7facef95de93774"
+source = "git+https://github.com/c22dev/nxhost#1654434f57af84807dffd02cc04463eeafc2c269"
 
 [[package]]
 name = "nxfs"
 version = "0.1.0"
-source = "git+https://github.com/c22dev/nxhost#d9b2dc5b88447f499f7b5761d7facef95de93774"
+source = "git+https://github.com/c22dev/nxhost#1654434f57af84807dffd02cc04463eeafc2c269"
 dependencies = [
  "aes",
  "anyhow",
@@ -424,7 +424,7 @@ dependencies = [
 [[package]]
 name = "nxhost"
 version = "0.1.0"
-source = "git+https://github.com/c22dev/nxhost#d9b2dc5b88447f499f7b5761d7facef95de93774"
+source = "git+https://github.com/c22dev/nxhost#1654434f57af84807dffd02cc04463eeafc2c269"
 dependencies = [
  "anyhow",
  "bcdec_rs",
@@ -460,7 +460,7 @@ dependencies = [
 [[package]]
 name = "nxshader"
 version = "0.1.0"
-source = "git+https://github.com/c22dev/nxhost#d9b2dc5b88447f499f7b5761d7facef95de93774"
+source = "git+https://github.com/c22dev/nxhost#1654434f57af84807dffd02cc04463eeafc2c269"
 dependencies = [
  "anyhow",
  "nxfs",
@@ -1009,6 +1009,7 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "clap",
+ "libc",
  "nxhost",
 ]
 
