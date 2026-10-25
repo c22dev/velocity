@@ -74,7 +74,7 @@ Any controller works (Switch Pro, Joy-Con, DualSense, Xbox...). On iOS there are
 You can rebind the rest in the game's Options > Controls
 
 ## Limitations
-- the iOS app builds but hasn't been played on a real device yet
+- iOS is tested on an iPhone 17, other devices might need some love
 - `NX_NO_SCHED=1` is still needed, the scheduler fix isn't verified yet
 - mostly tested up to the menus, levels might still have some surprises
 
