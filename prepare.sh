@@ -3,6 +3,10 @@
 # Constantin Clerc (c22dev) - 0.1
 set -e
 NXHOST="${NXHOST:-../nxhost}"
+if [ ! -d "$NXHOST" ]; then
+    NXHOST=work/nxhost
+    [ -d $NXHOST ] || git clone -q https://github.com/c22dev/nxhost $NXHOST
+fi
 W=work/v109
 cargo build --release --manifest-path "$NXHOST/Cargo.toml" -p nxfs -p nxpatch
 T="$NXHOST/target/release"

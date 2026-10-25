@@ -22,24 +22,19 @@ Drop them at the root of the repo (or point to them with `--base`, `--update`, `
 - Apple Silicon Mac, macOS 14 or later
 - Rust toolchain
 - Xcode 26 or later
-- [nxhost](https://github.com/c22dev/nxhost) cloned next to this repo (`../nxhost`), or anywhere else with `NXHOST=<path>`
 
 ## Building
-Clone both side by side :
-```
-git clone https://github.com/c22dev/nxhost
-git clone https://github.com/c22dev/velocity
-cd velocity
-```
-Then, extract and patch the game code (only once, or after an nxhost update) :
+Extract and patch the game code (only once, or after an nxhost update) :
 ```
 ./prepare.sh
 ```
-And :
+Then :
 ```
 cargo build --release
 NX_NO_SCHED=1 NX_WINDOWED=1 target/release/velocity
 ```
+nxhost gets fetched by itself (by Cargo, and by `prepare.sh` for its tools). Working on nxhost too ? clone it next to this repo and add a `.cargo/config.toml` with `paths = ["../nxhost/crates/nxhost", "../nxhost/crates/nxfs", "../nxhost/crates/nxabi", "../nxhost/crates/nxshader"]` so your local copy gets used
+
 The first launch compiles the game's shaders as they show up, so expect a few hitches the first time you see something new
 
 ## Controls
